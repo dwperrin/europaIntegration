@@ -1,5 +1,153 @@
 <section id="helloworld-view" class="page-section">
     <div id="content">
-        <h2>Hello World</h2>
+        <h2>Rooms</h2>
+        <table st-table="vm.rooms" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Order</th>
+                <th>Name</th>
+                <th>Deleted</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in vm.rooms">
+                <td>{{row.room_id}}</td>
+                <td>{{row.room_order}}</td>
+                <td>{{row.room_name}}</td>
+                <td>{{row.room_deleted}}</td>
+            </tr>
+            </tbody>
+        </table>
+        </br >
+        <h2>Roles</h2>
+        <table st-table="vm.roles" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Deleted</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in vm.roles">
+                <td>{{row.role_id}}</td>
+                <td>{{row.role_name}}</td>
+                <td>{{row.role_deleted}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>Guests</h2>
+        <table st-table="vm.guests" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Deleted</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in vm.guests">
+                <td>{{row.guest_id}}</td>
+                <td>{{row.guest_title}}</td>
+                <td>{{row.guest_initials}}</td>
+                <td>{{row.guest_lastname}}</td>
+                <td>{{row.guest_firstname}}</td>
+                <td>{{row.guest_mobile}}</td>
+                <td>{{row.guest_country}}</td>
+                <td>{{row.guest_type}}</td>
+                <td>{{row.guest_login}}</td>
+                <td>{{row.guest_password}}</td>
+                <td>{{row.guest_badge}}</td>
+                <td>{{row.guest_deleted}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+
+        <h2>Sessions</h2>
+        <table st-table="vm.sessions" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Deleted</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in vm.sessions">
+                <td>{{row.session_id}}</td>
+                <td>{{row.session_date}}</td>
+                <td>{{row.session_start}}</td>
+                <td>{{row.session_end}}</td>
+                <td>{{row.session_type}}</td>
+                <td>{{row.session_name}}</td>
+                <td>{{row.session_display_screen}}</td>
+                <td>{{row.room_id}}</td>
+                <td>{{row.session_deleted}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>Moderators</h2>
+        <table st-table="vm.moderators" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Deleted</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in vm.moderators">
+                <td>{{row.moderator_id}}</td>
+                <td>{{row.guest_id}}</td>
+                <td>{{row.session_id}}</td>
+                <td>{{row.moderator_order}}</td>
+                <td>{{row.moderator_role_id}}</td>
+                <td>{{row.moderator_role}}</td>
+                <td>{{row.moderator_role_importance}}</td>
+                <td>{{row.moderator_display_screen}}</td>
+                <td>{{row.moderator_preview}}</td>
+                <td>{{row.moderator_deleted}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>Interventions</h2>
+        <table st-table="vm.interventions" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Deleted</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in vm.interventions">
+                <td>{{row.intervention_id}}</td>
+                <td>{{row.guest_id}}</td>
+                <td>{{row.session_id}}</td>
+                <td>{{row.intervention_order}}</td>
+                <td>{{row.intervention_role_id}}</td>
+                <td>{{row.intervention_role}}</td>
+                <td>{{row.intervention_role_importance}}</td>
+                <td>{{row.intervention_type}}</td>
+                <td>{{row.intervention_type}}</td>
+                <td>{{row.intervention_title}}</td>
+                <td>{{row.intervention_from}}</td>
+                <td>{{row.intervention_to}}</td>
+                 <td>{{row.intervention_display_screen}}</td>
+                <td>{{row.intervention_preview}}</td>
+                <td>{{row.intervention_autho1}}</td>
+                <td>{{row.intervention_autho2}}</td>
+                <td>{{row.intervention_autho3}}</td>
+                <td>{{row.intervention_autho4}}</td>
+                <td>{{row.intervention_deleted}}</td>
+            </tr>
+            </tbody>
+        </table>
+
     </div>
 </section>

@@ -15,7 +15,10 @@
     var config = {
         appErrorPrefix: '[EuropaToSm Error] ',
         appTitle: 'EuropaToSm',
-        actionBarColour: '#F5F5F5'
+        actionBarColour: '#F5F5F5',
+        tempBase: 'programme_bichat-2015',
+        tempKey: 'YNZ1442191648'
+
     };
 
     core.value('config', config);

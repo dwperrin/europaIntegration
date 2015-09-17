@@ -1,10 +1,11 @@
 
 /// <reference path="../../../typings/tsd.d.ts"/>
+/*jshint -W106 */
+// jscs:disable requireCamelCaseOrUpperCaseIdentifiers
+
 'use strict';
 
 var serverConfig = require('../config/config.js');
-var xmlToJson = require('../utils/xmlToJson.js');
-var jsonifySoap = require('../utils/jsonifySoap');
 var iconv  = require('iconv-lite');
 
 var soapSettings = serverConfig.europaSoapConnectionSettings;
@@ -180,7 +181,7 @@ module.exports = function () {
     }
 
     function simplifyItems(items) {
-        var simpleItems = []
+        var simpleItems = [];
         for (var i = 0; i < items.length; i++) {
             var simpleItem = {};
             for (var key in items[i]) {
@@ -192,5 +193,6 @@ module.exports = function () {
         }
         return simpleItems;
     }
-
 };
+// jscs:enable requireCamelCaseOrUpperCaseIdentifiers
+/*jshint +W106 */

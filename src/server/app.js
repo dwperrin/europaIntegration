@@ -31,7 +31,7 @@ latin1SoapHttpClient.request = latin1SoapHttpClientRequest;
 soap.createClient(serverConfig.europaSoapConnectionSettings.url,
                                {httpClient: latin1SoapHttpClient},
                                function(err, client) {
-                                    global.europaSoapClient = client;
+                                   global.europaSoapClient = client;
                                });
 
 console.log('About to crank up node');
