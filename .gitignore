@@ -1,0 +1,12 @@
+.idea/
+.settings/
+.tmp/
+
+node_modules/
+bower_modules/
+bower_components/
+
+build/
+coverage/
+
+npm-debug.log

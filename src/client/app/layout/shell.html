@@ -1,0 +1,41 @@
+<div ng-controller="ShellController as vm">
+
+    <header id="main-header-section"></header>
+
+    <div class="clear"></div>
+
+    <div class="logo-header-section"></div>
+
+    <!--<div class="action-bar-section" ng-show="showActionBar" ng-include="'app/layout/actionbar.html'" ng-style="{ 'background-color': '{{vm.actionbarColour}}' }"> </div>-->
+
+    <div class="clear"></div>
+
+    <main id="main-content">
+        <div class="main-section">
+            <!-- ui-view is key here -->
+            <div ui-view class="shuffle-animation"></div>
+
+            <div ngplus-overlay
+                 ngplus-overlay-delay-in="0"
+                 ngplus-overlay-delay-out="700"
+                 ngplus-overlay-animation="dissolve-animation">
+                <img src="content/img/busy.gif"/>
+
+                <div class="page-spinner-message overlay-message">{{vm.busyMessage}}</div>
+            </div>
+        </div>
+    </main>
+
+    <div class="clear"></div>
+
+    <footer id="bottom-section">
+        <div class="container">
+            <section class="text-left-align" id="copyright">
+                <p>
+                    ©2014 Open Slide & Services.
+                </p>
+            </section>
+        </div>
+    </footer>
+    <div class="clear"></div>
+</div>

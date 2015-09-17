@@ -1,0 +1,42 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "mocha/mocha.d.ts": {
+      "commit": "002144638e70f7823f65467cdc40db845b969d0c"
+    },
+    "angularjs/angular.d.ts": {
+      "commit": "f31a288eeb756cecda394b808211f4a71c0afdaf"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "f31a288eeb756cecda394b808211f4a71c0afdaf"
+    },
+    "gulp/gulp.d.ts": {
+      "commit": "002144638e70f7823f65467cdc40db845b969d0c"
+    },
+    "node/node.d.ts": {
+      "commit": "f31a288eeb756cecda394b808211f4a71c0afdaf"
+    },
+    "body-parser/body-parser.d.ts": {
+      "commit": "f31a288eeb756cecda394b808211f4a71c0afdaf"
+    },
+    "bootstrap/bootstrap.d.ts": {
+      "commit": "f31a288eeb756cecda394b808211f4a71c0afdaf"
+    },
+    "chai/chai.d.ts": {
+      "commit": "f31a288eeb756cecda394b808211f4a71c0afdaf"
+    },
+    "sinon/sinon.d.ts": {
+      "commit": "f31a288eeb756cecda394b808211f4a71c0afdaf"
+    },
+    "express/express.d.ts": {
+      "commit": "f31a288eeb756cecda394b808211f4a71c0afdaf"
+    },
+    "angular-ui-router/angular-ui-router.d.ts": {
+      "commit": "f31a288eeb756cecda394b808211f4a71c0afdaf"
+    }
+  }
+}
