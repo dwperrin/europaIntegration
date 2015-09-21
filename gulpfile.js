@@ -168,9 +168,9 @@ gulp.task('optimize', ['vet', 'inject'], function() { //, 'test'
 
     var assets = plugins.useref.assets({searchPath: './'});
     // Filters are named for the gulp-useref path
-    var cssFilter = plugins.filter('**/*.css');
-    var jsAppFilter = plugins.filter('**/' + gulpConfig.optimized.app);
-    var jslibFilter = plugins.filter('**/' + gulpConfig.optimized.lib);
+    var cssFilter = plugins.filter('**/*.css', {restore: true});
+    var jsAppFilter = plugins.filter('**/' + gulpConfig.optimized.app, {restore: true});
+    var jslibFilter = plugins.filter('**/' + gulpConfig.optimized.lib, {restore: true});
 
     var templateCache = gulpConfig.temp + gulpConfig.templateCache.file;
 
@@ -182,17 +182,17 @@ gulp.task('optimize', ['vet', 'inject'], function() { //, 'test'
         // Get the css
         .pipe(cssFilter)
         .pipe(plugins.csso())
-        .pipe(cssFilter.restore())
+        .pipe(cssFilter.restore)
         // Get the custom javascript
         .pipe(jsAppFilter)
         .pipe(plugins.ngAnnotate({add: true}))
         .pipe(plugins.uglify())
         .pipe(getHeader())
-        .pipe(jsAppFilter.restore())
+        .pipe(jsAppFilter.restore)
         // Get the vendor javascript
         .pipe(jslibFilter)
         .pipe(plugins.uglify()) // another option is to override wiredep to use min files
-        .pipe(jslibFilter.restore())
+        .pipe(jslibFilter.restore)
         // Take inventory of the file names for future rev numbers
         .pipe(plugins.rev())
         // Apply the concat and file replacement with useref
@@ -349,13 +349,13 @@ gulp.task('clean-app-code', function(done) {
 });
 
 gulp.task('clean-server-code', function(done) {
-    var files = [].concat(
-        gulpConfig.build + '**/*',
-        '!' + gulpConfig.appBuild + '**',
-        '!' + gulpConfig.build + '.gitignore',
-        '!' + gulpConfig.build + '.git/',
-        '!' + gulpConfig.build + 'package.json'
-    );
+    var files = [].concat(gulpConfig.build + '**/*',
+            '!' + gulpConfig.build,
+            '!' + gulpConfig.appBuild,
+            '!' + gulpConfig.appBuild + '**',
+            '!' + gulpConfig.build + '.gitignore',
+            '!' + gulpConfig.build + '.git/',
+            '!' + gulpConfig.build + 'package.json');
     clean(files, done);
 });
 
@@ -522,7 +522,9 @@ function changeEvent(event) {
  */
 function clean(path, done) {
     log('Cleaning: ' + plugins.util.colors.blue(path));
-    del(path, done);
+    del(path).then(function() {
+        done();
+    });
 }
 
 /**
