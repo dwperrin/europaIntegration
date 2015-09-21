@@ -77,13 +77,13 @@ switch (environment){
         mongoose.connection.on('error', console.log);
         mongoose.connection.on('disconnected', connect);
         app.use('/api', apiRouter);
-        app.use(express.static('./build/'));
+        app.use(express.static('./build/app/'));
         // Any invalid calls for templateUrls are under app/* and should return 404
-        app.use('/app/*', function(req, res, next) {
-            four0four.send404(req, res);
-        });
+        // app.use('/app/*', function(req, res, next) {
+        //     four0four.send404(req, res);
+        // });
         // Any deep link calls should return index.html
-        app.use('/*', express.static('./build/index.html'));
+        app.use('/*', express.static('./build/app/index.html'));
         break;
     default:
         console.log('** DEV **');
