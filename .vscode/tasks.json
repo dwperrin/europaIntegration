@@ -60,39 +60,6 @@
                 "$tsc",
                 "$jshint"
             ]
-        },
-        {
-            "taskName": "deploy-sofcot-live",
-            "args": ["deploy", "--sofcotlive"],
-            "isBuildCommand": false,
-            "isWatching": false,
-            "problemMatcher": [
-                "$lessCompile",
-                "$tsc",
-                "$jshint"
-            ]
-        },
-        {
-            "taskName": "deploy-sofcot-staging",
-            "args": ["deploy", "--sofcotstage"],
-            "isBuildCommand": false,
-            "isWatching": false,
-            "problemMatcher": [
-                "$lessCompile",
-                "$tsc",
-                "$jshint"
-            ]
-        },
-        {
-            "taskName": "deploy-sofcot-test",
-            "args": ["deploy", "--sofcottest"],
-            "isBuildCommand": false,
-            "isWatching": false,
-            "problemMatcher": [
-                "$lessCompile",
-                "$tsc",
-                "$jshint"
-            ]
         }
     ]
 }

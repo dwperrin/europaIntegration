@@ -58,50 +58,38 @@ gulp.task('vet', function() {
  ***************************  DEPLOYMENT  *******************************
  ************************************************************************/
 //
-// gulp.task('deploy', [], function() {
-//     log('Begining deployment');
-//     var repository = '';
-//     if (args.live) {
-//         updateNodeEnvInIisNodeYaml('productionLive');
-//         repository = 'html5live';
-//     }
-//     else if (args.stage) {
-//         updateNodeEnvInIisNodeYaml('productionStaging');
-//         repository = 'html5staging';
-//     }
-//     else if (args.test) {
-//         updateNodeEnvInIisNodeYaml('productionTest');
-//         repository = 'html5test';
-//     }
-//     if (args.sofcotlive) {
-//         updateNodeEnvInIisNodeYaml('productionLiveSofcot');
-//         repository = 'sofcothtml5live';
-//     }
-//     else if (args.sofcotstage) {
-//         updateNodeEnvInIisNodeYaml('productionStagingSofcot');
-//         repository = 'sofcothtml5staging';
-//     }
-//     else if (args.sofcottest) {
-//         updateNodeEnvInIisNodeYaml('productionTestSofcot');
-//         repository = 'sofcothtml5test';
-//     }
-//
-//     git.exec({args: gulpConfig.gitBuildParameters + ' status'}, function (err, stdout) {
-//         console.log(stdout);
-//         git.exec({args: gulpConfig.gitBuildParameters + ' add -A'}, function (err, stdout) {
-//             console.log(stdout);
-//             git.exec({args: gulpConfig.gitBuildParameters + ' commit -am "deploy commit: ' + moment().toISOString() + '"'}, function (err, stdout) {
-//                 console.log(stdout);
-//                 git.exec({args: gulpConfig.gitBuildParameters + ' push ' + repository + ' master'}, function (err, stdout) {
-//                     if (err) {
-//                         throw err;
-//                     }
-//                     console.log(stdout);
-//                 });
-//             });
-//         });
-//     });
-// });
+gulp.task('deploy', [], function() {
+    log('Begining deployment');
+    var repository = '';
+    if (args.live) {
+        updateNodeEnvInIisNodeYaml('productionLive');
+        repository = 'europaIntergrationLive';
+    }
+    else if (args.stage) {
+        updateNodeEnvInIisNodeYaml('productionStaging');
+        repository = 'europaIntergrationStaging';
+    }
+    else if (args.test) {
+        updateNodeEnvInIisNodeYaml('productionTest');
+        repository = 'europaIntergrationTest';
+    }
+
+    git.exec({args: gulpConfig.gitBuildParameters + ' status'}, function (err, stdout) {
+        console.log(stdout);
+        git.exec({args: gulpConfig.gitBuildParameters + ' add -A'}, function (err, stdout) {
+            console.log(stdout);
+            git.exec({args: gulpConfig.gitBuildParameters + ' commit -am "deploy commit: ' + moment().toISOString() + '"'}, function (err, stdout) {
+                console.log(stdout);
+                git.exec({args: gulpConfig.gitBuildParameters + ' push ' + repository + ' master'}, function (err, stdout) {
+                    if (err) {
+                        throw err;
+                    }
+                    console.log(stdout);
+                });
+            });
+        });
+    });
+});
 
 // END DEPLOYEMNT
 /************************************************************************

@@ -24,7 +24,8 @@
     "ng-annotate": "^1.0.2",
     "request": "^2.58.0",
     "sanitize-html": "^1.7.0",
-    "serve-favicon": "^2.0.1"
+    "serve-favicon": "^2.0.1",
+    "soap": "^0.9.3"
   },
   "devDependencies": {
     "browser-sync": "^2.9.3",
