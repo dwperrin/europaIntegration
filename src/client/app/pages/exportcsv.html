@@ -1,0 +1,91 @@
+<section id="helloworld-view" class="page-section">
+    <div id="content">
+        <h2>Slide Manager CSV</h2>
+        <table st-table="vm.rooms" class="table table-striped">
+            <thead>
+            <tr>
+                <th>eventtitle</th>
+                <th>eventshorttitle</th>
+                <th>eventstart</th>
+                <th>eventend</th>
+                <th>venuename</th>
+                <th>roomname</th>
+                <th>roomalias</th>
+                <th>roomcapacity</th>
+                <th>sessiontitle</th>
+                <th>sessionsubtitle</th>
+                <th>sessiontheme</th>
+                <th>sessiontype</th>
+                <th>sessioncustomcode</th>
+                <th>sessionstart</th>
+                <th>sessionend</th>
+                <th>sessionmoderatortitle</th>
+                <th>sessionmoderators</th>
+                <th>presentationorder</th>
+                <th>presentationtitle</th>
+                <th>presentationsubtitle</th>
+                <th>presentationcustomcode</th>
+                <th>presentationstart</th>
+                <th>presentationend</th>
+                <th>speakertitle</th>
+                <th>speakerfirstname</th>
+                <th>speakerlastname</th>
+                <th>speakeremail</th>
+                <th>speakerbarcode</th>
+                <th>speakerstreetaddressline1</th>
+                <th>speakerstreetaddressline2</th>
+                <th>speakerstreetaddressline3</th>
+                <th>speakertown</th>
+                <th>speakerpostcode</th>
+                <th>speakercountry</th>
+                <th>speakerphonenumber</th>
+                <th>speakermobilenumber</th>
+                <th>speakerfaxnumber</th>
+                <th>speakerwebsite</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in vm.sessionsWithRooms">
+                <td>eventtitle</td>
+                <td>eventshorttitle</td>
+                <td>eventstart</td>
+                <td>eventend</td>
+                <td>venuename</td>
+                <td>{{row.room_name}}</td>
+                <td>{{row.room_alias}}</td>
+                <td>roomcapacity</td>
+                <td>{{row.session_name}}</td>
+                <td>sessionsubtitle</td>
+                <td>sessiontheme</td>
+                <td>{{row.session_type}}</td>
+                <td>{{row.session_id}}</td>
+                <td>{{row.session_date}} {{row.session_start}}</td>
+                <td>{{row.session_date}} {{row.session_end}}</td>
+                <td>sessionmoderatortitle</td>
+                <td>sessionmoderators</td>
+                <td>presentationorder</td>
+                <td>presentationtitle</td>
+                <td>presentationsubtitle</td>
+                <td>presentationcustomcode</td>
+                <td>presentationstart</td>
+                <td>presentationend</td>
+                <td>speakertitle</td>
+                <td>speakerfirstname</td>
+                <td>speakerlastname</td>
+                <td>speakeremail</td>
+                <td>speakerbarcode</td>
+                <td>speakerstreetaddressline1</td>
+                <td>speakerstreetaddressline2</td>
+                <td>speakerstreetaddressline3</td>
+                <td>speakertown</td>
+                <td>speakerpostcode</td>
+                <td>speakercountry</td>
+                <td>speakerphonenumber</td>
+                <td>speakermobilenumber</td>
+                <td>speakerfaxnumber</td>
+                <td>speakerwebsite</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

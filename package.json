@@ -40,7 +40,7 @@
     "debug": "^2.0.0",
     "del": "^2.0.0",
     "glob": "^5.0.14",
-    "gulp": "^3.9.0",
+    "gulp": "^3.8.10",
     "gulp-angular-templatecache": "^1.7.0",
     "gulp-autoprefixer": "^3.0.1",
     "gulp-bump": "^0.3.1",
@@ -54,7 +54,7 @@
     "gulp-if": "^1.2.5",
     "gulp-ignore": "^1.2.1",
     "gulp-imagemin": "^2.3.0",
-    "gulp-inject": "^2.2.0",
+    "gulp-inject": "^1.0.1",
     "gulp-istanbul": "^0.10.0",
     "gulp-jscs": "^2.0.0",
     "gulp-jshint": "^1.11.2",
@@ -101,7 +101,7 @@
     "sinon": "^1.12.2",
     "sinon-chai": "^2.6.0",
     "supertest": "^1.0.1",
-    "wiredep": "^3.0.0-beta",
+    "wiredep": "^2.2.2",
     "yamljs": "^0.2.3",
     "yargs": "^3.24.0"
   }
