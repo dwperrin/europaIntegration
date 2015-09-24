@@ -3,6 +3,9 @@
 
     angular
         .module('app.pages', [
-            'app.core'
+            'app.core',
+            'ui.grid',
+            'ui.grid.resizeColumns',
+            'ui.grid.exporter'
         ]);
 })();
