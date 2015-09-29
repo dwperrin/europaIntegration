@@ -99,10 +99,14 @@
                         return this['session_date'] + ' ' + this['session_end'];
                     };
                     row.interventionStart = function() {
-                        return this['session_date'] + ' ' + this['intervention_from'];
+                        var time = this['intervention_from'] ? this['intervention_from'].slice(0, -3) : this['session_start'];
+                        var s = this['session_date'] + ' ' + time;
+                        return s;
                     };
                     row.interventionEnd = function() {
-                        return this['session_date'] + ' ' + this['intervention_to'];
+                        var time = this['intervention_to'] ? this['intervention_to'].slice(0, -3) : this['session_end'];
+                        var s = this['session_date'] + ' ' + time;
+                        return s;
                     };
                 });
 
