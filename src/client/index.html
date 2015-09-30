@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
     <base href="/"></base>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
     <!-- build:css content/css/lib.css -->
     <!-- bower:css -->
@@ -25,6 +26,9 @@
 
     <!-- build:css content/css/app.css-->
     <!-- inject:css -->
+    <link rel="stylesheet" href="/.tmp/A-app.css">
+    <link rel="stylesheet" href="/.tmp/B-responsive.css">
+    <link rel="stylesheet" href="/.tmp/C-bootsrap-mods.css">
     <!-- endinject -->
     <!-- endbuild -->
 </head>
@@ -84,10 +88,13 @@
     <script src="/src/client/app/core/constants.js"></script>
     <script src="/src/client/app/core/core.route.js"></script>
     <script src="/src/client/app/core/dataservice.js"></script>
-    <script src="/src/client/app/layout/helloworld.controller.js"></script>
     <script src="/src/client/app/layout/shell.controller.js"></script>
+    <script src="/src/client/app/pages/config.controller.js"></script>
+    <script src="/src/client/app/pages/dashboard.controller.js"></script>
     <script src="/src/client/app/pages/exportcsv.controller.js"></script>
     <script src="/src/client/app/pages/pages.route.js"></script>
+    <script src="/src/client/app/pages/rawdata.controller.js"></script>
+    <script src="/src/client/app/pages/updates.controller.js"></script>
     <!-- endinject -->
 
     <!-- inject:templates:js -->

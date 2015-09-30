@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('app.layout')
-        .controller('HelloWorldController', HelloWorldController);
+        .module('app.pages')
+        .controller('RawDataController', RawDataController);
 
-    HelloWorldController.$inject = ['$rootScope','$q', 'dataservice', 'config', 'logger'];
+    RawDataController.$inject = ['$rootScope','$q', 'dataservice', 'config', 'logger'];
     /* @ngInject */
-    function HelloWorldController($rootScope, $q, dataservice, config, logger) {
+    function RawDataController($rootScope, $q, dataservice, config, logger) {
 
         var vm = this;
 

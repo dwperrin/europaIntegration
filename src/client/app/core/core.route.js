@@ -14,16 +14,6 @@
     function getStates() {
         return [
             {
-                state: 'helloworld',
-                config: {
-                    url: '/',
-                    templateUrl: 'app/layout/helloworld.html',
-                    controller: 'HelloWorldController',
-                    controllerAs: 'vm',
-                    title: 'HellowWorld'
-                }
-            },
-            {
                 state: '404',
                 config: {
                     url: '/404',

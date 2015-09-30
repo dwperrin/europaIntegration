@@ -1,118 +1,19 @@
 <div ui-view>
-    <section id="info-view" class="page-section">
+    <section id="export-view" class="page-section">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <h1>SlideManager CSV</h1>
+                    <h3>SlideManager CSV</h3>
                     <div ui-grid="vm.gridOptions" ui-grid-resize-columns ui-grid-exporter style="height: 650px;"></div>
-                    <p>
-                    Pres Count: {{vm.presCount}}</br>
-                    Pres Check 1: {{vm.presCountCheck1}}</br>
-                    Pres Check 2: {{vm.presCountCheck2}}</br>
-                    Session Count: {{vm.sessCount}}</br>
-                    Session Check: {{vm.sessCountCheck}}</br>
-                    </p>
+                    <ul id="csvcheck" class="list-inline">
+                        <li>Pres Count: {{vm.presCount}}</li>
+                        <li>Pres Check 1: {{vm.presCountCheck1}}</li>
+                        <li>Pres Check 2: {{vm.presCountCheck2}}</li>
+                        <li>Session Count: {{vm.sessCount}}</li>
+                        <li>Session Check: {{vm.sessCountCheck}}</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 </div>
-
-<!--<section id="helloworld-view" class="page-section">
-    <div id="content">
-        <h2>Slide Manager CSV</h2>
-        <table st-table="vm.rooms" class="table table-striped">
-            <thead>
-            <tr>
-                <th>eventtitle</th>
-                <th>eventshorttitle</th>
-                <th>eventstart</th>
-                <th>eventend</th>
-                <th>venuename</th>
-                <th>roomname</th>
-                <th>roomalias</th>
-                <th>roomcapacity</th>
-                <th>sessiontitle</th>
-                <th>sessionsubtitle</th>
-                <th>sessiontheme</th>
-                <th>sessiontype</th>
-                <th>sessioncustomcode</th>
-                <th>sessionstart</th>
-                <th>sessionend</th>
-                <th>sessionmoderatortitle</th>
-                <th>sessionmoderators</th>
-                <th>presentationorder</th>
-                <th>presentationtitle</th>
-                <th>presentationsubtitle</th>
-                <th>presentationcustomcode</th>
-                <th>presentationstart</th>
-                <th>presentationend</th>
-                <th>speakertitle</th>
-                <th>speakerfirstname</th>
-                <th>speakerlastname</th>
-                <th>speakeremail</th>
-                <th>speakerbarcode</th>
-                <th>speakerstreetaddressline1</th>
-                <th>speakerstreetaddressline2</th>
-                <th>speakerstreetaddressline3</th>
-                <th>speakertown</th>
-                <th>speakerpostcode</th>
-                <th>speakercountry</th>
-                <th>speakerphonenumber</th>
-                <th>speakermobilenumber</th>
-                <th>speakerfaxnumber</th>
-                <th>speakerwebsite</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="row in vm.sessionRoomsPresSpeakers">
-                <td>eventtitle</td>
-                <td>eventshorttitle</td>
-                <td>eventstart</td>
-                <td>eventend</td>
-                <td>Palais de congrés</td>
-                <td>{{row.room_name}}</td>
-                <td>{{row.room_alias}}</td>
-                <td></td>
-                <td>{{row.session_name}}</td>
-                <td></td>
-                <td></td>
-                <td>{{row.session_type}}</td>
-                <td>{{row.session_id}}</td>
-                <td>{{row.session_date}} {{row.session_start}}</td>
-                <td>{{row.session_date}} {{row.session_end}}</td>
-                <td>{{row.moderator_title}}</td>
-                <td>{{row.moderator_names}}</td>
-                <td>{{row.intervention_order}}</td>
-                <td>{{row.intervention_title}}</td>
-                <td></td>
-                <td>{{row.intervention_id}}</td>
-                <td>{{row.session_date}} {{row.intervention_from}}</td>
-                <td>{{row.session_date}} {{row.intervention_to}}</td>
-                <td>{{row.guest_title}}</td>
-                <td>{{row.guest_firstname}}</td>
-                <td>{{row.guest_lastname}}</td>
-                <td>{{row.guest_email}}</td>
-                <td>{{row.guest_badge}}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>{{row.guest_town}}</td>
-                <td></td>
-                <td>{{row.guest_country}}</td>
-                <td>{{row.guest_phone}}</td>
-                <td>{{row.guest_mobile}}</td>
-                <td></td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
-        <p>
-        Pres Count: {{vm.presCount}}</br>
-        Pres Check 1: {{vm.presCountCheck1}}</br>
-        Pres Check 2: {{vm.presCountCheck2}}</br>
-        Session Count: {{vm.sessCount}}</br>
-        Session Check: {{vm.sessCountCheck}}</br>
-        </p>
-    </div>
-</section>-->
