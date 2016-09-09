@@ -16,8 +16,10 @@
         appErrorPrefix: '[EuropaToSm Error] ',
         appTitle: 'EuropaToSm',
         actionBarColour: '#F5F5F5',
-        tempBase: 'programme_bichat-2015',
-        tempKey: 'YNZ1442191648'
+        tempBase: 'programme_bichat-2016',
+        // tempBase: 'programme_bichat-2015' // 2016 KEY
+        tempKey: 'ELJ1473431188' // 2016 KEY
+        // tempKey: 'YNZ1442191648' // 2015 KEY
 
     };
 

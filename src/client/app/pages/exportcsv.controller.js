@@ -78,16 +78,16 @@
                 var srigcomputed = _.forEach(srig, function (row) {
 
                     row.eventTitle = function() {
-                        return '15eme Bichat';
+                        return '16eme Bichat';
                     };
                     row.eventShortTitle = function() {
-                        return '15BICHAT';
+                        return '16BICHAT';
                     };
                     row.eventStart = function()  {
-                        return '08/10/2015';
+                        return '06/10/2016';
                     };
                     row.eventEnd = function() {
-                        return '18/10/2015';
+                        return '08/10/2016';
                     };
                     row.venueName = function() {
                         return 'Palais de congés de Paris';

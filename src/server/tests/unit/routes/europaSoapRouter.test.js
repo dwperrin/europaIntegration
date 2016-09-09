@@ -12,7 +12,7 @@ var app = require('express')(),
 
 //chai.use(sinonChai);
 
-describe('routes: EventRouter', function() {
+describe('routes: europaSoapRouter', function() {
 
     before(function(done) {
         this.timeout(10000);

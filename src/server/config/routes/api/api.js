@@ -10,6 +10,9 @@ var routes = function () {
     var europaSoapRouter = require('./europaSoapRoutes.js')();
     router.use('/europasoap', europaSoapRouter);
 
+    var europaSoapConfigRouter = require('./europaSoapConfigRoutes.js')();
+    router.use('/europasoap/config', europaSoapConfigRouter);
+
     router.get('/*', four0four.notFoundMiddleware);
 
     return router;

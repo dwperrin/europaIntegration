@@ -1,5 +1,7 @@
 /// <reference path="../../../../../typings/tsd.d.ts"/>
 /*jshint expr: true*/
+/*jshint -W106 */
+// jscs:disable requireCamelCaseOrUpperCaseIdentifiers
 'use strict';
 
 var app = require('express')(),
@@ -12,40 +14,18 @@ var app = require('express')(),
 
 chai.use(sinonChai);
 
-var req, res, next, spyStatus, spyJson, spySend, spyLocation, savedEvent, foundEvent;
+var req, res, next, spyStatus, spyJson, spySend;
 
 describe('controllers: EuropaSoapController', function() {
 
     beforeEach(initaliseVariables);
 
     it('should be defined', function() {
-        europaSoapController.should.exist();
+        europaSoapController.should.exist;
     });
 
     it('should be an object', function() {
         europaSoapController.should.be.a('object');
-    });
-
-    it('should send status 500 on error opening export', function(done) {
-        sinon.stub(global.europaSoapClient, 'lnOpenExport').yields(new Error('Error'), null);
-
-        europaSoapController.lnOpenExport(req, res, next);
-
-        spyStatus.should.have.been.calledWith(500).calledOnce;
-        spySend.should.have.been.calledOnce;
-        global.europaSoapClient.lnOpenExport.restore();
-        done();
-    });
-
-    it('should send status 200 and json when successfully opening export', function(done) {
-        sinon.stub(global.europaSoapClient, 'lnOpenExport').yields(null, 'data');
-
-        europaSoapController.lnOpenExport(req, res, next);
-
-        spyStatus.should.have.been.calledWith(200).calledOnce;
-        spyJson.should.have.been.calledOnce;
-        global.europaSoapClient.lnOpenExport.restore();
-        done();
     });
 });
 
@@ -54,7 +34,7 @@ describe('controllers: EuropaSoapController:lnOpenExport', function() {
     beforeEach(initaliseVariables);
 
     it('should be defined', function() {
-        europaSoapController.lnOpenExport.should.exist();
+        europaSoapController.lnOpenExport.should.exist;
     });
 
     it('should be a function', function() {
@@ -90,7 +70,7 @@ describe('controllers: EuropaSoapController:lnGetRooms', function() {
     beforeEach(initaliseVariables);
 
     it('should be defined', function() {
-        europaSoapController.lnGetRooms.should.exist();
+        europaSoapController.lnGetRooms.should.exist;
     });
 
     it('should be a function', function() {
@@ -109,7 +89,12 @@ describe('controllers: EuropaSoapController:lnGetRooms', function() {
     });
 
     it('should send status 200 and json when successfully getting rooms', function(done) {
-        sinon.stub(global.europaSoapClient, 'lnGetRooms').yields(null, 'data');
+        var result = {
+            array_ln_room : {
+                item : [{'attr1': 'data1'}]
+            }
+        };
+        sinon.stub(global.europaSoapClient, 'lnGetRooms').yields(null, result);
 
         europaSoapController.lnGetRooms(req, res, next);
 
@@ -126,7 +111,7 @@ describe('controllers: EuropaSoapController:lnGetRoles', function() {
     beforeEach(initaliseVariables);
 
     it('should be defined', function() {
-        europaSoapController.lnGetRoles.should.exist();
+        europaSoapController.lnGetRoles.should.exist;
     });
 
     it('should be a function', function() {
@@ -145,7 +130,12 @@ describe('controllers: EuropaSoapController:lnGetRoles', function() {
     });
 
     it('should send status 200 and json when successfully getting roles', function(done) {
-        sinon.stub(global.europaSoapClient, 'lnGetRoles').yields(null, 'data');
+        var result = {
+            array_ln_role : {
+                item : [{'attr1': 'data1'}]
+            }
+        };
+        sinon.stub(global.europaSoapClient, 'lnGetRoles').yields(null, result);
 
         europaSoapController.lnGetRoles(req, res, next);
 
@@ -162,7 +152,7 @@ describe('controllers: EuropaSoapController:lnGetGuests', function() {
     beforeEach(initaliseVariables);
 
     it('should be defined', function() {
-        europaSoapController.lnGetGuests.should.exist();
+        europaSoapController.lnGetGuests.should.exist;
     });
 
     it('should be a function', function() {
@@ -181,7 +171,12 @@ describe('controllers: EuropaSoapController:lnGetGuests', function() {
     });
 
     it('should send status 200 and json when successfully getting guests', function(done) {
-        sinon.stub(global.europaSoapClient, 'lnGetGuests').yields(null, 'data');
+        var result = {
+            array_ln_guest : {
+                item : [{'attr1': 'data1'}]
+            }
+        };
+        sinon.stub(global.europaSoapClient, 'lnGetGuests').yields(null, result);
 
         europaSoapController.lnGetGuests(req, res, next);
 
@@ -198,7 +193,7 @@ describe('controllers: EuropaSoapController:lnGetSessions', function() {
     beforeEach(initaliseVariables);
 
     it('should be defined', function() {
-        europaSoapController.lnGetSessions.should.exist();
+        europaSoapController.lnGetSessions.should.exist;
     });
 
     it('should be a function', function() {
@@ -217,7 +212,12 @@ describe('controllers: EuropaSoapController:lnGetSessions', function() {
     });
 
     it('should send status 200 and json when successfully getting sessions', function(done) {
-        sinon.stub(global.europaSoapClient, 'lnGetSessions').yields(null, 'data');
+        var result = {
+            array_ln_session : {
+                item : [{'attr1': 'data1'}]
+            }
+        };
+        sinon.stub(global.europaSoapClient, 'lnGetSessions').yields(null, result);
 
         europaSoapController.lnGetSessions(req, res, next);
 
@@ -234,7 +234,7 @@ describe('controllers: EuropaSoapController:lnGetModerators', function() {
     beforeEach(initaliseVariables);
 
     it('should be defined', function() {
-        europaSoapController.lnGetModerators.should.exist();
+        europaSoapController.lnGetModerators.should.exist;
     });
 
     it('should be a function', function() {
@@ -253,7 +253,12 @@ describe('controllers: EuropaSoapController:lnGetModerators', function() {
     });
 
     it('should send status 200 and json when successfully getting moderators', function(done) {
-        sinon.stub(global.europaSoapClient, 'lnGetModerators').yields(null, 'data');
+        var result = {
+            array_ln_moderator : {
+                item : [{'attr1': 'data1'}]
+            }
+        };
+        sinon.stub(global.europaSoapClient, 'lnGetModerators').yields(null, result);
 
         europaSoapController.lnGetModerators(req, res, next);
 
@@ -270,7 +275,7 @@ describe('controllers: EuropaSoapController:lnGetInterventions', function() {
     beforeEach(initaliseVariables);
 
     it('should be defined', function() {
-        europaSoapController.lnGetInterventions.should.exist();
+        europaSoapController.lnGetInterventions.should.exist;
     });
 
     it('should be a function', function() {
@@ -289,7 +294,12 @@ describe('controllers: EuropaSoapController:lnGetInterventions', function() {
     });
 
     it('should send status 200 and json when successfully getting interventions', function(done) {
-        sinon.stub(global.europaSoapClient, 'lnGetInterventions').yields(null, 'data');
+        var result = {
+            array_ln_intervention : {
+                item : [{'attr1': 'data1'}]
+            }
+        };
+        sinon.stub(global.europaSoapClient, 'lnGetInterventions').yields(null, result);
 
         europaSoapController.lnGetInterventions(req, res, next);
 
@@ -306,7 +316,7 @@ describe('controllers: EuropaSoapController:lnCloseExport', function() {
     beforeEach(initaliseVariables);
 
     it('should be defined', function() {
-        europaSoapController.lnCloseExport.should.exist();
+        europaSoapController.lnCloseExport.should.exist;
     });
 
     it('should be a function', function() {
@@ -369,3 +379,5 @@ function initaliseVariables () {
         lnCloseExport: function(args, callback) {},
     };
 }
+// jscs:enable requireCamelCaseOrUpperCaseIdentifiers
+/*jshint +W106 */
